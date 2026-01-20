@@ -1,0 +1,15 @@
+{
+  // Oxfmt configuration (Prettier-compatible)
+  // Docs: https://oxc.rs/docs/guide/usage/formatter
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "endOfLine": "lf"
+}

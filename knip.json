@@ -1,0 +1,19 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "workspaces": {
+    ".": {
+      "entry": ["scripts/*.ts"],
+      "project": ["scripts/**/*.ts"]
+    },
+    "packages/*": {
+      "entry": ["src/index.ts", "src/index.tsx"],
+      "project": ["src/**/*.ts", "src/**/*.tsx"]
+    },
+    "apps/*": {
+      "entry": ["src/index.ts", "src/index.tsx", "src/main.ts", "src/main.tsx"],
+      "project": ["src/**/*.ts", "src/**/*.tsx"]
+    }
+  },
+  "ignoreDependencies": [],
+  "ignoreExportsUsedInFile": true
+}

@@ -1,0 +1,29 @@
+{
+  "name": "typescript-template",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "build": "bun run --filter '*' build",
+    "typecheck": "tsgo --noEmit",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "check": "bun run typecheck && bun run lint && bun run format:check",
+    "knip": "knip",
+    "jscpd": "jscpd .",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@anthropic-ai/tsgo": "^0.0.4-alpha.1",
+    "jscpd": "^4.0.5",
+    "knip": "^5.56.1",
+    "oxfmt": "^0.24.0",
+    "oxlint": "^0.20.0",
+    "typescript": "^5.8.3"
+  }
+}

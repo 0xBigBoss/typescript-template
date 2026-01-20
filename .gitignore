@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Bun
+bun.lockb
+
+# Environment
+.env
+.env.local
+.env.*.local
+.envrc.private
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# Nix
+result
+.direnv/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary
+tmp/
+temp/
