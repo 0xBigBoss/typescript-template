@@ -1,5 +1,8 @@
 pre-commit:
   commands:
+    typecheck:
+      glob: '*.{ts,tsx}'
+      run: bun run typecheck
     lint:
       glob: '*.{js,ts,cjs,mjs,jsx,tsx}'
       run: npx oxlint --fix {staged_files}
@@ -8,15 +11,27 @@ pre-commit:
       glob: '*.{js,ts,cjs,mjs,jsx,tsx,json,jsonc}'
       run: npx oxfmt --write {staged_files}
       stage_fixed: true
-    typecheck:
+    knip:
+      glob: '*.{ts,tsx,json}'
+      run: bun run knip
+    jscpd:
       glob: '*.{ts,tsx}'
-      run: bun run typecheck
+      run: bun run jscpd
 
 pre-push:
   commands:
+    typecheck:
+      glob: '*.{ts,tsx}'
+      run: bun run typecheck
     lint:
       glob: '*.{js,ts,cjs,mjs,jsx,tsx}'
       run: npx oxlint {push_files}
     format:
       glob: '*.{js,ts,cjs,mjs,jsx,tsx,json,jsonc}'
       run: npx oxfmt --check {push_files}
+    knip:
+      glob: '*.{ts,tsx,json}'
+      run: bun run knip
+    jscpd:
+      glob: '*.{ts,tsx}'
+      run: bun run jscpd
