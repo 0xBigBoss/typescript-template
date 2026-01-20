@@ -46,3 +46,6 @@ npm-debug.log*
 tmp/
 temp/
 test-from-template/
+
+# Local dev notes
+CLAUDE.local.md
