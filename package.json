@@ -1,8 +1,11 @@
 {
   "name": "typescript-template",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "type": "module",
-  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "build": "bun run --filter '*' build",
     "typecheck": "tsgo",

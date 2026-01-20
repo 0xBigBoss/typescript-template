@@ -4,7 +4,7 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "lib": ["ES2022"],
+    "lib": ["ES2022", "DOM"],
     "jsx": "react-jsx",
 
     "strict": true,
@@ -24,11 +24,17 @@
     "resolveJsonModule": true,
 
     "paths": {
-      "@/*": ["./packages/*/src"]
+      "@template/core": ["./packages/core/src"],
+      "@template/utils": ["./packages/utils/src"]
     },
 
     "noEmit": true
   },
-  "include": ["packages/*/src/**/*.ts", "packages/*/src/**/*.tsx", "apps/*/src/**/*.ts", "apps/*/src/**/*.tsx"],
+  "include": [
+    "packages/*/src/**/*.ts",
+    "packages/*/src/**/*.tsx",
+    "apps/*/src/**/*.ts",
+    "apps/*/src/**/*.tsx"
+  ],
   "exclude": ["node_modules", "**/dist", "**/build", "**/*.test.ts", "**/*.spec.ts"]
 }

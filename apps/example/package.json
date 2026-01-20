@@ -1,0 +1,13 @@
+{
+  "name": "@template/example",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo 'no build step'",
+    "start": "bun src/index.ts"
+  },
+  "dependencies": {
+    "@template/utils": "workspace:*"
+  }
+}
