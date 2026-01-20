@@ -7,6 +7,7 @@
   ],
   "type": "module",
   "scripts": {
+    "setup": "bun scripts/setup.ts",
     "build": "bun run --filter '*' build",
     "typecheck": "tsgo",
     "lint": "oxlint .",
