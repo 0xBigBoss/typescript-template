@@ -5,13 +5,13 @@
     "": {
       "name": "typescript-template",
       "devDependencies": {
-        "@changesets/cli": "^2.29.6",
+        "@changesets/cli": "^2.29.8",
         "@typescript/native-preview": "^7.0.0-dev.20260120.1",
-        "jscpd": "^4.0.5",
-        "knip": "^5.56.1",
+        "jscpd": "^4.0.7",
+        "knip": "^5.82.1",
         "oxfmt": "^0.26.0",
         "oxlint": "^1.41.0",
-        "typescript": "^5.8.3",
+        "typescript": "^5.9.3",
         "zshy": "^0.7.0",
       },
     },
