@@ -19,32 +19,38 @@ async function findFiles(dir: string, pattern: RegExp): Promise<string[]> {
 
   async function walk(currentDir: string): Promise<void> {
     const entries = await readdir(currentDir, { withFileTypes: true })
+    const dirs: string[] = []
+
     for (const entry of entries) {
       const fullPath = join(currentDir, entry.name)
       if (entry.isDirectory()) {
-        // Skip these directories
-        if (['node_modules', '.git', 'dist', 'build', 'scripts'].includes(entry.name)) {
-          continue
+        if (!['node_modules', '.git', 'dist', 'build', 'scripts'].includes(entry.name)) {
+          dirs.push(fullPath)
         }
-        await walk(fullPath)
       } else if (pattern.test(entry.name)) {
         results.push(fullPath)
       }
     }
+
+    await Promise.all(dirs.map((d) => walk(d)))
   }
 
   await walk(dir)
   return results
 }
 
-async function replaceInFile(filePath: string, oldScope: string, newScope: string): Promise<boolean> {
+async function replaceInFile(
+  filePath: string,
+  oldScope: string,
+  newScope: string,
+): Promise<{ path: string; changed: boolean }> {
   const content = await readFile(filePath, 'utf-8')
   if (!content.includes(oldScope)) {
-    return false
+    return { path: filePath, changed: false }
   }
   const updated = content.replaceAll(oldScope, newScope)
   await writeFile(filePath, updated)
-  return true
+  return { path: filePath, changed: true }
 }
 
 async function main(): Promise<void> {
@@ -68,11 +74,12 @@ async function main(): Promise<void> {
   const root = join(import.meta.dir, '..')
   const files = await findFiles(root, /\.(json|ts|tsx)$/)
 
+  const results = await Promise.all(files.map((f) => replaceInFile(f, OLD_SCOPE, scope)))
+
   let count = 0
-  for (const file of files) {
-    const changed = await replaceInFile(file, OLD_SCOPE, scope)
+  for (const { path, changed } of results) {
     if (changed) {
-      console.log(`  Updated: ${file.replace(root + '/', '')}`)
+      console.log(`  Updated: ${path.replace(root + '/', '')}`)
       count++
     }
   }

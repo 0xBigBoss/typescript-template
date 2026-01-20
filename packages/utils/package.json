@@ -1,14 +1,25 @@
 {
   "name": "@template/utils",
   "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.cts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "scripts": {
-    "build": "echo 'no build step'"
+    "build": "zshy"
   },
   "dependencies": {
     "@template/core": "workspace:*"
-  }
+  },
+  "zshy": "./src/index.ts"
 }

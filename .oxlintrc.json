@@ -17,10 +17,18 @@
     "prefer-const": "error"
   },
   "plugins": ["typescript", "import", "promise", "unicorn"],
-  "ignorePatterns": ["node_modules", "dist", "build", "coverage", "*.d.ts"],
+  "ignorePatterns": ["node_modules", "**/dist", "build", "coverage", "*.d.ts"],
   "env": {
     "browser": true,
     "node": true,
     "es2022": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**/*", "apps/**/*"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
 }

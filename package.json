@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "setup": "bun scripts/setup.ts",
-    "build": "bun run --filter '*' build",
+    "build": "bun run --filter './packages/*' build && bun run --filter './apps/*' build",
     "typecheck": "tsgo",
     "lint": "oxlint .",
     "lint:fix": "oxlint --fix .",
@@ -27,6 +27,8 @@
     "jscpd": "^4.0.5",
     "knip": "^5.56.1",
     "oxfmt": "^0.26.0",
-    "oxlint": "^1.41.0"
+    "oxlint": "^1.41.0",
+    "typescript": "^5.8.3",
+    "zshy": "^0.7.0"
   }
 }
