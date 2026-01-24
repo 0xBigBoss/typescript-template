@@ -5,6 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+
+    # Uncomment for overlays that require unfree packages (e.g., atlas-overlay)
+    # nixpkgs-unfree.url = "github:numtide/nixpkgs-unfree/nixos-unstable";
+    # nixpkgs-unfree.inputs.nixpkgs.follows = "nixpkgs-unstable";
     bun-overlay = {
       url = "github:0xbigboss/bun-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
