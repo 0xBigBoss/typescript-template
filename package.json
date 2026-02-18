@@ -9,7 +9,7 @@
   "scripts": {
     "setup": "bun scripts/setup.ts",
     "build": "bun run --filter './packages/*' build && bun run --filter './apps/*' build",
-    "typecheck": "tsgo",
+    "typecheck": "tsgo -b",
     "lint": "oxlint .",
     "lint:fix": "oxlint --fix .",
     "format": "oxfmt --write .",
