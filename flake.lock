@@ -11,11 +11,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770552982,
-        "narHash": "sha256-eDEYAwvq0EWAdljJDGTSer4gl29U2BqzJsmTJWKrAKg=",
+        "lastModified": 1772108653,
+        "narHash": "sha256-7DqV7iKAj2ociDXHtkCGW+ZOFiXiK1rjjQ+Iipye/ps=",
         "owner": "0xbigboss",
         "repo": "bun-overlay",
-        "rev": "fe36b0e2e9f8f21d4767941f1bda11c91afcea19",
+        "rev": "7fedca3d3ade4a5f99907b15a40591662400022f",
         "type": "github"
       },
       "original": {
@@ -110,11 +110,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1771423170,
-        "narHash": "sha256-K7Dg9TQ0mOcAtWTO/FX/FaprtWQ8BmEXTpLIaNRhEwU=",
+        "lastModified": 1772173633,
+        "narHash": "sha256-MOH58F4AIbCkh6qlQcwMycyk5SWvsqnS/TCfnqDlpj4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "bcc4a9d9533c033d806a46b37dc444f9b0da49dd",
+        "rev": "c0f3d81a7ddbc2b1332be0d8481a672b4f6004d6",
         "type": "github"
       },
       "original": {
