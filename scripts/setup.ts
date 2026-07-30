@@ -8,8 +8,7 @@ import { createInterface } from 'node:readline/promises'
 const OLD_SCOPE = ['@', 'template'].join('')
 
 async function prompt(question: string): Promise<string> {
-  // node:readline/promises replaces Bun's `for await (const line of console)`
-  // stdin iterator — stock-Node API, works under nub.
+  // Stock-Node stdin API, so the script carries no runtime-specific dependency.
   const rl = createInterface({ input: process.stdin, output: process.stdout })
   try {
     const answer = await rl.question(question)
@@ -92,8 +91,9 @@ async function main(): Promise<void> {
   console.log(`\nDone! Updated ${count} files.`)
   console.log('\nNext steps:')
   console.log('  1. Update root package.json "name" field')
-  console.log('  2. Run: nub install')
-  console.log('  3. Run: nub run check')
+  console.log('  2. Replace or delete LICENSE — it covers the template, not your project')
+  console.log('  3. Run: nub install')
+  console.log('  4. Run: nub run check')
 }
 
 main()
