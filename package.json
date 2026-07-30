@@ -23,12 +23,11 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
-    "@typescript/native": "npm:typescript@^7.0.2",
     "jscpd": "^5.0.12",
     "knip": "^6.29.0",
     "oxfmt": "^0.60.0",
     "oxlint": "^1.75.0",
-    "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "zshy": "^0.7.3"
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2"
   }
 }

@@ -6,6 +6,9 @@ dist/
 build/
 *.tsbuildinfo
 
+# Declarations emitted by `tsc -b` for typechecking only
+.tsbuild/
+
 # Compiled JS in src (should be in dist)
 packages/*/src/*.js
 packages/*/src/*.d.ts

@@ -18,15 +18,21 @@
 
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
+    // Lets tsdown emit declarations via oxc instead of the TypeScript API, which
+    // keeps the build off TypeScript 7's unstable API. Requires explicit type
+    // annotations on every exported symbol.
+    "isolatedDeclarations": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
 
-    "paths": {
-      "@template/core": ["./packages/core/src"],
-      "@template/utils": ["./packages/utils/src"]
-    },
+    // Sibling packages resolve from src during typecheck, so `check` works on a
+    // fresh clone with no dist/ and never reads a stale build. Each package
+    // declares this condition in its own exports map, so adding a package needs
+    // no edit here. Consumers never match it: it is scope-qualified, and
+    // scripts/setup.ts rewrites the scope along with everything else.
+    "customConditions": ["@template/source"],
 
     "noEmit": true
   }
